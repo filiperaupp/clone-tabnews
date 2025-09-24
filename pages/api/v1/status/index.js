@@ -25,9 +25,6 @@ async function status(request, response) {
     databaseOpenedConnectionsResult.rows[0].count;
   response.status(200).json({
     update_at: updateAt,
-    max_connection: parseInt(databaseInfo.max_connection),
-    open_connections: parseInt(databaseInfo.open_connections),
-    postgres_version: parseFloat(databaseInfo.postgres_version),
     dependencies: {
       database: {
         version: databaseVersionValue,
